@@ -1,7 +1,11 @@
 # RE-Challange
  ###### Reverse engineering challange: APT0.5 AkA FluffyPenguins
 
+You are the Senior security analyst at SecretSource.CO One of your team member has investigated an insident and uncovered a stealty threat hidden in memory on your company servers. 
 
+Your collegue suspects thats its the APT group called FluffyPenguins, based on the TTP's he discovered. 
+
+This is not the first time you have encoundeted FluffyPenguins and in previous incidents you discoverd a patterne that seems to identify their tool of choise.
 
 
 
@@ -15,3 +19,15 @@ Patterns:
 
 00 00 51 66 4F 46 7A 00 6C 68 47 56 79 42 6A 00 68 4A 56 59 00 74 33 5A 68 78 6D 5A
 ```
+
+
+Your team member managed to dump process memory of a suspicious binary running on one of the servers.
+So, based on what you already know you start to analyze the memory.
+
+
+Is this FluffyPenguins? 
+
+Find the flag in the memory dump.
+
+
+happy hunting...
