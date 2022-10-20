@@ -21,8 +21,8 @@ This is not the first time you have encountered FluffyPenguins and in previous i
 ```
 
 
-Your team member managed to dump process memory of a suspicious binary running on one of the servers. 
-So, based on what you already know you start to analyze the memory.
+Your team member managed to dump process memory of a suspicious binary running on an endpoint that looks to be patient Zer0. 
+So, based on what you already know, you start to analyze the memory.
 
 
 Is this FluffyPenguins? 
