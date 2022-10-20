@@ -31,3 +31,18 @@ Find the flag in the memory dump.
 
 
 **happy hunting...**
+
+
+
+
+###### Optional. Use the docker file.
+
+Build Dockerfile and use the pre-build tools for this challange. 
+
+**Build Docker**
+
+``` docker build -t thehunterctf:latest .  ```
+
+**Run Docker**
+
+``` docker run -it thehunterctf:latest /bin/bash  ```
