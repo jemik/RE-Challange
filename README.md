@@ -1,4 +1,4 @@
-# RE-Challange
+# RE-Challenge
  ###### Reverse engineering challange: APT0.5 AkA FluffyPenguins
 
 You are the Senior security analyst at SecretSource.CO One of your team members has investigated an incident and uncovered a stealthy threat hidden in memory on your company servers.
