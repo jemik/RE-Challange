@@ -46,3 +46,6 @@ Build Dockerfile and use the pre-build tools for this challange.
 **Run Docker**
 
 ``` docker run -it thehunterctf:latest /bin/bash  ```
+
+
+<sub>Hint: https://yara.readthedocs.io/en/stable/writingrules.html</sub>
