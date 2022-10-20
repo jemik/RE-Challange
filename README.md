@@ -1,11 +1,17 @@
 # RE-Challange
- Reverse engineering challanges
+ ###### Reverse engineering challange: APT0.5 AkA FluffyPenguins
+
+
 
 
 
 Patterns:
-
+```
 00 00 51 66 4F 46 7A 56 6C 68 47 56 79 42 6A 52 68 4A 56 59 00 74 33 5A 68 78 6D 5A
+
 00 00 51 66 4F 46 7A 56 6C 68 00 56 79 42 6A 52 68 4A 56 00 5A 74 33 5A 68 78 6D 5A
+
 00 00 51 66 4F 46 7A 56 6C 68 47 56 00 42 6A 52 00 4A 56 59 5A 74 33 5A 68 78 6D 5A
+
 00 00 51 66 4F 46 7A 00 6C 68 47 56 79 42 6A 00 68 4A 56 59 00 74 33 5A 68 78 6D 5A
+```
