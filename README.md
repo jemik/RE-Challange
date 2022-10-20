@@ -10,7 +10,7 @@ This is not the first time you have encountered FluffyPenguins and in previous i
 
 
 **Patterns:**
-```
+```c
 00 00 51 66 4F 46 7A 56 6C 68 47 56 79 42 6A 52 68 4A 56 59 00 74 33 5A 68 78 6D 5A
 
 00 00 51 66 4F 46 7A 56 6C 68 00 56 79 42 6A 52 68 4A 56 00 5A 74 33 5A 68 78 6D 5A
