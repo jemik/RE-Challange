@@ -15,7 +15,9 @@ REMNUX
 
 FLARE VM
 
+Flags can be validated here.
 
+https://xqbrkf8n54.execute-api.eu-west-1.amazonaws.com/prod
 
 **happy hunting...**
 
@@ -35,4 +37,3 @@ Build Dockerfile and use the pre-build tools for this challange.
 ``` docker run -it thehunterctf:latest /bin/bash  ```
 
 
-<sub>Hint: https://yara.readthedocs.io/en/stable/writingrules.html</sub>
