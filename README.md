@@ -22,9 +22,13 @@ https://xqbrkf8n54.execute-api.eu-west-1.amazonaws.com/prod
 Suggestions : 
 
 REMNUX
+https://remnux.org
 
 FLARE VM
+https://github.com/mandiant/flare-vm
 
+CYBERCHEF
+https://gchq.github.io/CyberChef/
 
 **happy hunting...**
 
