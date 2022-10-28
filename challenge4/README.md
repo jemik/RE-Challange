@@ -12,5 +12,7 @@ Go grep your favorite VM and start debugging.
 sample does not contain actual malware.
 
 
+ **happy hunting...**
+
 
 <sub>Hint : x32dbg for the win</sub> 

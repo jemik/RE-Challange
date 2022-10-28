@@ -4,7 +4,7 @@
 
 FROM ubuntu:20.04
 LABEL maintainer="Jesper Mikkelsen"
-RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get -qq install -y python3.8-dev python3-pip libjansson-dev libmagic-dev p7zip-full p7zip-rar bsdmainutils wget nano git automake libtool make gcc pkg-config flex bison radare2 upx zip
+RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get -qq install -y python3.8-dev python3-pip libjansson-dev libmagic-dev p7zip-full p7zip-rar bsdmainutils wget nano git automake libtool make gcc pkg-config flex bison radare2 upx zip vim tmux
 
 
 WORKDIR /analyze
