@@ -71,7 +71,7 @@ def help():
 Hexyara: little enchancement of yara
 {sys.argv[0]} [hex_line_count] <yara with params>
     """)
-    exit()
+    sys.exit()
 
 
 if __name__ == "__main__":
