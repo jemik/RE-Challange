@@ -12,7 +12,7 @@ def print_hex(file_hndl, pos, length, matched):
         hex_str = " ".join([f"{i:02x}" for i in b])
         hex_str = hex_str[0:23] + " " + hex_str[23:]
         ascii = "".join([chr(i) if 32 <= i <= 127 else "." for i in b])
-        print(f"\033[38;5;15m{(i*16)+pos:08x}:\033[0m  \033[90m{hex_str} \033[93m|\033[90m{ascii}\033[93m|\033[0m")
+        print(f"\033[38;5;15m{(i*16)+pos:08x}:\033[0m  \033[90m{hex_str} \033[93m| \033[90m{ascii}\033[93m |\033[0m")
 
 
 def processor(yara_params, line_multi):
@@ -56,10 +56,11 @@ def processor(yara_params, line_multi):
 
             ]
             prompt = '\033[38;5;15m[ENGINE@CORE]\033[38;5;3m:>\033[0m'
-            print("\n{} Rule::hit_{} \n".format(prompt, str_name.decode()))
+            print("\n{} \033[91mRule::hit_{}\033[0m \n".format(prompt, str_name.decode()))
             prompt = '\033[38;5;15m[{}]\033[38;5;3m:>'.format(hex(pos))
             print(tabulate(content,  headers=col_names, tablefmt="grid"))
             print(" \n{} \033[0mHexdump@matched::offset\033[0m\n".format(prompt) )
+            print("\033[92moffset     hex                                               ascii\033[0m")
             print_hex(cur_file_hndl, pos, match_str_len+line_multi if line_multi else match_str_len*4, match_str)
             
 
@@ -88,7 +89,7 @@ if __name__ == "__main__":
     if "-s" not in yara_params:
         yara_params.append("-s")
     prompt = '\033[38;5;15m[READY@CORE]\033[38;5;3m:>\033[0m'
-    print("\n{} Loading yara rule and file...\n".format(prompt))
+    print("\n{} Loading yara rule and file...".format(prompt))
     processor(yara_params, multi)
     prompt = '\033[38;5;15m[RETURN@CORE]\033[38;5;3m:>\033[0m'
     print("\n{} Process completed.\n".format(prompt))
