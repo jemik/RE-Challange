@@ -55,6 +55,8 @@ def processor(yara_params, line_multi):
 
 
             ]
+            prompt = '\033[38;5;15m[ENGINE@CORE]\033[38;5;3m:>\033[0m'
+            print("\n{} Rule::hit_{} \n".format(prompt, str_name.decode()))
             prompt = '\033[38;5;15m[{}]\033[38;5;3m:>'.format(hex(pos))
             print(tabulate(content,  headers=col_names, tablefmt="grid"))
             print(" \n{} \033[0mHexdump@matched::offset\033[0m\n".format(prompt) )
@@ -85,6 +87,8 @@ if __name__ == "__main__":
         multi = None
     if "-s" not in yara_params:
         yara_params.append("-s")
+    prompt = '\033[38;5;15m[READY@CORE]\033[38;5;3m:>\033[0m'
+    print("\n{} Loading yara rule and file...\n".format(prompt))
     processor(yara_params, multi)
     prompt = '\033[38;5;15m[RETURN@CORE]\033[38;5;3m:>\033[0m'
     print("\n{} Process completed.\n".format(prompt))
