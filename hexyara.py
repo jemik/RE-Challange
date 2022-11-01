@@ -1,9 +1,64 @@
 #!/usr/bin/python3
+import hashlib
 import socket
 import sys
 import subprocess
 import os
+import magic
 from tabulate import tabulate
+
+# File size
+def convert_bytes(num):
+    """
+        this function will convert bytes to MB.... GB... etc
+        """
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
+        if num < 1024.0:
+            return "%3.1f %s" % (num, x)
+        num /= 1024.0
+
+
+def file_size(file_path):
+    """
+        this function will return the file size
+        """
+    if os.path.isfile(file_path):
+        file_info = os.stat(file_path)
+        return convert_bytes(file_info.st_size)
+
+
+def get_tlsh(filename):
+    the_val = ""
+    try:
+        the_val = tlsh.hash(open(filename, 'rb').read())
+    except:
+        the_val = ""
+    return the_val
+
+
+def get_hash(filename):
+    fh = open(filename, 'rb')
+    m = hashlib.md5()
+    s = hashlib.sha1()
+    s256 = hashlib.sha256()
+    s512 = hashlib.sha512()
+    while True:
+        data = fh.read(8192)
+        if not data:
+            break
+
+        m.update(data)
+        s.update(data)
+        s256.update(data)
+        s512.update(data)
+
+    md5 = m.hexdigest()
+    sha1 = s.hexdigest()
+    sha256 = s256.hexdigest()
+    sha512 = s512.hexdigest()
+
+    return md5, sha1, sha256, sha512
+
 
 def print_hex(file_hndl, pos, length, matched):
     file_hndl.seek(pos)
@@ -69,6 +124,28 @@ def processor(yara_params, line_multi):
         cur_file_hndl.close()
 
 
+def fileinfo(file):
+    if file[2]:
+        md5, sha1, sha256, sha512 =  get_hash(file[2])
+        try:
+            filetype = str(magic.from_file(file[2], mime=False))
+        except:
+            filetype = "na"
+
+        
+        
+        banner = """
+        
+ _____ 
+|0101 |  \033[90mFilename :\033[0m {}
+|1010 |  \033[90mSHA256.  :\033[0m {}
+|     |  \033[90mFiletype :\033[0m {}
+|___BIN  \033[90mFilesize :\033[0m {}
+    """.format(file[2], sha256, filetype, file_size(file[2]))
+        print(banner)
+    else:
+        print("ERROR! cant read file.")
+
 def help():
     print(f"""\
 Hexyara: little enchancement of yara
@@ -90,6 +167,7 @@ if __name__ == "__main__":
         yara_params.append("-s")
     prompt = '\033[38;5;15m[READY@CORE]\033[38;5;3m:>\033[0m'
     print("\n{} Loading yara rule and file...".format(prompt))
+    fileinfo(yara_params)
     processor(yara_params, multi)
     prompt = '\033[38;5;15m[RETURN@CORE]\033[38;5;3m:>\033[0m'
     print("\n{} Process completed.\n".format(prompt))
